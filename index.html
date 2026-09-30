@@ -883,22 +883,42 @@
             const evt = scheduleData.find(e => e.id === id);
             if (!evt) return;
 
-            // Generate ICS Content
-            const startDateStr = "2026100" + evt.day + "T" + (evt.time.includes("8:00") ? "080000" : evt.time.includes("12:00") ? "120000" : evt.time.includes("5:00") ? "170000" : "090000");
-            const endDateStr = "2026100" + evt.day + "T" + (evt.time.includes("10:00") ? "220000" : "170000");
+            // Date comes from dateStr (e.g. "Friday 2 October 2026") -> "20261002"
+            const dayOfMonth = evt.dateStr.match(/(\d{1,2}) October/)[1].padStart(2, "0");
+            const datePart = "202610" + dayOfMonth;
 
-            const icsContent = 
-`BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//Australian Jeep Jamboree 2026//EN
-BEGIN:VEVENT
-SUMMARY:Jeep Jambo: ${evt.title}
-DESCRIPTION:${evt.description}
-LOCATION:${evt.location}, Kendall Showground, NSW
-DTSTART:${startDateStr}
-DTEND:${endDateStr}
-END:VEVENT
-END:VCALENDAR`;
+            // Parse "5:30 pm" -> minutes since midnight
+            const toMinutes = (t) => {
+                const [, h, m, ap] = t.trim().match(/(\d{1,2}):(\d{2})\s*(am|pm)/i);
+                return (parseInt(h) % 12 + (ap.toLowerCase() === "pm" ? 12 : 0)) * 60 + parseInt(m);
+            };
+            const toICSTime = (mins) =>
+                String(Math.floor(mins / 60)).padStart(2, "0") + String(mins % 60).padStart(2, "0") + "00";
+
+            // Time is "8:00 am" or "8:00 am – 4:00 pm"; single times default to 1 hour
+            const [startText, endText] = evt.time.split("–");
+            const startMins = toMinutes(startText);
+            const endMins = endText ? toMinutes(endText) : startMins + 60;
+
+            // Escape text per RFC 5545
+            const esc = (s) => s.replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\n/g, "\\n");
+            const stamp = new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+
+            const icsContent = [
+                "BEGIN:VCALENDAR",
+                "VERSION:2.0",
+                "PRODID:-//Australian Jeep Jamboree 2026//EN",
+                "BEGIN:VEVENT",
+                `UID:${evt.id}@jeepjamboree2026`,
+                `DTSTAMP:${stamp}`,
+                `SUMMARY:${esc("Jeep Jambo: " + evt.title)}`,
+                `DESCRIPTION:${esc(evt.description)}`,
+                `LOCATION:${esc(evt.location + ", Kendall Showground, NSW")}`,
+                `DTSTART;TZID=Australia/Sydney:${datePart}T${toICSTime(startMins)}`,
+                `DTEND;TZID=Australia/Sydney:${datePart}T${toICSTime(endMins)}`,
+                "END:VEVENT",
+                "END:VCALENDAR"
+            ].join("\r\n");
 
             const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8;" });
             const link = document.createElement("a");
