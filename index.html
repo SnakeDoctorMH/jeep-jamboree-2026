@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Australian 2026 Jeep Jamboree Schedule</title>
+    
+    <!-- Fonts: Montserrat & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            850: '#15171a',
+                            900: '#111315',
+                            950: '#0a0b0c',
+                        },
+                        trail: {
+                            dark: '#1C1E21',
+                            card: '#24282D',
+                            border: '#333A42',
+                            gold: '#E5A93C',
+                            goldHover: '#D4962A',
+                            olive: '#4A5D4E',
+                            oliveDark: '#364439',
+                            oliveLight: '#657C69',
+                            amber: '#D97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1C1E21;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333A42;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4A5D4E;
+        }
+
+        /* Hero texture overlay */
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(229, 169, 60, 0.12) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        .gradient-border-gold {
+            border-left: 4px solid #E5A93C;
+        }
+        
+        .gradient-border-olive {
+            border-left: 4px solid #657C69;
+        }
+
+        .gradient-border-purple {
+            border-left: 4px solid #A855F7;
+        }
+
+        /* Print Style Overrides */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .print-only {
+                display: block !important;
+            }
+            .event-card {
+                break-inside: avoid;
+                border: 1px solid #ccc !important;
+                background: #fff !important;
+                color: #000 !important;
+                box-shadow: none !important;
+            }
+            .event-card * {
+                color: #000 !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-trail-dark text-slate-100 font-sans min-h-screen antialiased flex flex-col selection:bg-trail-gold selection:text-slate-900">
+
+    <!-- Top Header / Hero -->
+    <header class="relative bg-slate-900 border-b border-trail-border overflow-hidden bg-grid-pattern">
+        <!-- Accent Glows -->
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-trail-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/2 -right-24 w-96 h-96 bg-trail-olive/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10 relative z-10">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                
+                <!-- Title & Meta -->
+                <div class="space-y-3">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-trail-gold/10 border border-trail-gold/30 text-trail-gold text-xs font-semibold tracking-wide uppercase">
+                        <i class="fa-solid fa-mountain"></i> Official Event Schedule
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold font-display tracking-tight text-white uppercase">
+                        Australian <span class="text-trail-gold">2026</span> Jeep Jamboree
+                    </h1>
+                    <p class="text-slate-300 text-sm sm:text-base flex items-center gap-2 flex-wrap font-medium">
+                        <span><i class="fa-regular fa-calendar-check text-trail-gold mr-1"></i> 2 – 5 October 2026</span>
+                        <span class="text-slate-600">•</span>
+                        <span><i class="fa-solid fa-location-dot text-red-400 mr-1"></i> Kendall Showground, NSW</span>
+                    </p>
+                </div>
+
+                <!-- Countdown Timer Card -->
+                <div class="bg-trail-card/90 backdrop-blur border border-trail-border p-4 sm:p-5 rounded-2xl shadow-xl flex flex-col sm:flex-row items-center gap-4 border-l-4 border-l-trail-gold">
+                    <div class="text-center sm:text-left">
+                        <span class="text-xs uppercase tracking-wider text-slate-400 font-semibold block">Event Kickoff</span>
+                        <span class="text-sm font-bold text-slate-200">Fri 2 Oct 2026, 8:00 AM</span>
+                    </div>
+                    <div class="h-8 w-px bg-trail-border hidden sm:block"></div>
+                    
+                    <div class="grid grid-cols-4 gap-2 text-center" id="countdown-wrapper">
+                        <div class="bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-700/50 min-w-[55px]">
+                            <span id="cd-days" class="block text-lg font-bold text-trail-gold font-display">00</span>
+                            <span class="text-[10px] text-slate-400 uppercase font-semibold">Days</span>
+                        </div>
+                        <div class="bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-700/50 min-w-[55px]">
+                            <span id="cd-hours" class="block text-lg font-bold text-white font-display">00</span>
+                            <span class="text-[10px] text-slate-400 uppercase font-semibold">Hours</span>
+                        </div>
+                        <div class="bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-700/50 min-w-[55px]">
+                            <span id="cd-mins" class="block text-lg font-bold text-white font-display">00</span>
+                            <span class="text-[10px] text-slate-400 uppercase font-semibold">Mins</span>
+                        </div>
+                        <div class="bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-700/50 min-w-[55px]">
+                            <span id="cd-secs" class="block text-lg font-bold text-slate-300 font-display">00</span>
+                            <span class="text-[10px] text-slate-400 uppercase font-semibold">Secs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Event Highlights Stats Bar -->
+            <div class="mt-8 pt-6 border-t border-slate-800/80 grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-3 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-trail-olive/30 text-emerald-400 flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-truck-monster"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs text-slate-400 font-medium">4WD Action</div>
+                        <div class="text-sm font-bold text-slate-100">Full & Half Day Trips</div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-3 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-amber-500/20 text-trail-gold flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-guitar"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs text-slate-400 font-medium">Live Music</div>
+                        <div class="text-sm font-bold text-slate-100">The Big Fins & Darren Jack</div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-3 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs text-slate-400 font-medium">Competitions</div>
+                        <div class="text-sm font-bold text-slate-100">Gymkhana & Flex Ramp</div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/60 border border-slate-800 rounded-xl p-3 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-rose-500/20 text-rose-400 flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-shirt"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs text-slate-400 font-medium">Special Night</div>
+                        <div class="text-sm font-bold text-slate-100">Hawaiian Theme Dinner</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Control Navigation Bar -->
+    <nav class="sticky top-0 z-30 bg-trail-dark/95 backdrop-blur-md border-b border-trail-border shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                
+                <!-- Day Tabs Scrollable -->
+                <div class="flex items-center gap-2 overflow-x-auto pb-1 lg:pb-0 scrollbar-none" id="day-tabs">
+                    <button data-day="all" class="day-tab active px-4 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap bg-trail-gold text-slate-950 shadow-md">
+                        <i class="fa-solid fa-list-ul mr-1.5"></i> All Days
+                    </button>
+                    <button data-day="1" class="day-tab px-4 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap bg-trail-card text-slate-300 hover:text-white border border-trail-border hover:border-slate-600">
+                        Day 1 <span class="text-xs text-slate-400 font-normal ml-1">(Fri 2 Oct)</span>
+                    </button>
+                    <button data-day="2" class="day-tab px-4 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap bg-trail-card text-slate-300 hover:text-white border border-trail-border hover:border-slate-600">
+                        Day 2 <span class="text-xs text-slate-400 font-normal ml-1">(Sat 3 Oct)</span>
+                    </button>
+                    <button data-day="3" class="day-tab px-4 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap bg-trail-card text-slate-300 hover:text-white border border-trail-border hover:border-slate-600">
+                        Day 3 <span class="text-xs text-slate-400 font-normal ml-1">(Sun 4 Oct)</span>
+                    </button>
+                    <button data-day="4" class="day-tab px-4 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap bg-trail-card text-slate-300 hover:text-white border border-trail-border hover:border-slate-600">
+                        Day 4 <span class="text-xs text-slate-400 font-normal ml-1">(Mon 5 Oct)</span>
+                    </button>
+                    <button data-day="saved" class="day-tab px-4 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap bg-trail-card text-rose-400 hover:text-rose-300 border border-trail-border hover:border-rose-900/50 flex items-center gap-1.5">
+                        <i class="fa-solid fa-heart text-rose-500"></i> My Saved <span id="saved-count" class="bg-rose-900/60 text-rose-200 text-xs px-1.5 py-0.5 rounded-full font-bold ml-0.5">0</span>
+                    </button>
+                </div>
+
+                <!-- Tools & Search -->
+                <div class="flex items-center gap-3">
+                    <!-- Search Input -->
+                    <div class="relative flex-1 sm:w-64">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                        <input type="text" id="search-input" placeholder="Search trips, music, gymkhana..." class="w-full bg-slate-900 border border-trail-border rounded-xl pl-9 pr-8 py-2 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-trail-gold transition-colors">
+                        <button id="clear-search" class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white text-xs">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex items-center gap-2">
+                        <button id="btn-show-map" class="px-3 py-2 bg-slate-900 hover:bg-slate-800 border border-trail-border text-slate-200 text-sm font-medium rounded-xl transition-colors flex items-center gap-1.5" title="Showground Map">
+                            <i class="fa-solid fa-map-location-dot text-emerald-400"></i>
+                            <span class="hidden sm:inline">Map</span>
+                        </button>
+
+                        <button id="btn-uhf-info" class="px-3 py-2 bg-slate-900 hover:bg-slate-800 border border-trail-border text-slate-200 text-sm font-medium rounded-xl transition-colors flex items-center gap-1.5" title="UHF Comms & Info">
+                            <i class="fa-solid fa-walkie-talkie text-trail-gold"></i>
+                            <span class="hidden sm:inline">UHF Ch</span>
+                        </button>
+
+                        <button id="btn-print" class="px-3 py-2 bg-slate-900 hover:bg-slate-800 border border-trail-border text-slate-200 text-sm font-medium rounded-xl transition-colors flex items-center gap-1.5" title="Print Schedule">
+                            <i class="fa-solid fa-print text-sky-400"></i>
+                            <span class="hidden sm:inline">Print</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Category Filter Pills -->
+            <div class="flex items-center gap-2 overflow-x-auto pt-3 border-t border-slate-800/80 mt-3 text-xs scrollbar-none" id="category-filters">
+                <span class="text-slate-400 font-medium mr-1 flex items-center gap-1">
+                    <i class="fa-solid fa-filter text-slate-500"></i> Category:
+                </span>
+                <button data-cat="all" class="cat-pill active px-3 py-1 rounded-lg bg-trail-gold text-slate-950 font-bold transition-all">All</button>
+                <button data-cat="4WD Trips" class="cat-pill px-3 py-1 rounded-lg bg-slate-900 text-slate-300 border border-trail-border hover:border-emerald-500/50 transition-all flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span> 4WD Trips
+                </button>
+                <button data-cat="Social & Entertainment" class="cat-pill px-3 py-1 rounded-lg bg-slate-900 text-slate-300 border border-trail-border hover:border-purple-500/50 transition-all flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-purple-500"></span> Social & Music
+                </button>
+                <button data-cat="Competitions & Displays" class="cat-pill px-3 py-1 rounded-lg bg-slate-900 text-slate-300 border border-trail-border hover:border-amber-500/50 transition-all flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-amber-500"></span> Competitions & Displays
+                </button>
+                <button data-cat="Camp Ops" class="cat-pill px-3 py-1 rounded-lg bg-slate-900 text-slate-300 border border-trail-border hover:border-sky-500/50 transition-all flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-sky-500"></span> Camp Ops
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            
+            <!-- Left 3 Columns: Events Feed -->
+            <div class="lg:col-span-3 space-y-8" id="events-container">
+                <!-- Javascript will dynamically populate schedule cards here -->
+            </div>
+
+            <!-- Right Column: Sidebar Widgets -->
+            <div class="space-y-6">
+                
+                <!-- Weather Widget -->
+                <div class="bg-trail-card border border-trail-border rounded-2xl p-5 shadow-lg relative overflow-hidden">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="font-display font-bold text-white text-base flex items-center gap-2">
+                            <i class="fa-solid fa-cloud-sun text-amber-400"></i> Kendall NSW Weather
+                        </h3>
+                        <span class="text-[10px] bg-slate-800 px-2 py-0.5 rounded text-slate-400 uppercase tracking-wide">Oct Forecast</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="text-3xl font-extrabold text-white">22°C</div>
+                            <div class="text-xs text-slate-400 mt-0.5">Mild & Sunny Trails</div>
+                        </div>
+                        <div class="text-right text-xs text-slate-300 space-y-1">
+                            <div><i class="fa-solid fa-temperature-arrow-up text-amber-400 mr-1"></i> High: 23°C</div>
+                            <div><i class="fa-solid fa-temperature-arrow-down text-sky-400 mr-1"></i> Low: 12°C</div>
+                            <div><i class="fa-solid fa-wind text-slate-400 mr-1"></i> Wind: 14 km/h SW</div>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400">
+                        <i class="fa-solid fa-circle-info text-trail-gold mr-1"></i> Ideal spring conditions for off-roading. Dust goggles and cool evening jackets recommended.
+                    </div>
+                </div>
+
+                <!-- UHF Channel Quick Reference -->
+                <div class="bg-trail-card border border-trail-border rounded-2xl p-5 shadow-lg">
+                    <h3 class="font-display font-bold text-white text-base mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-radio text-emerald-400"></i> UHF Radio Channels
+                    </h3>
+                    <div class="space-y-2 text-xs">
+                        <div class="flex justify-between items-center bg-slate-900/80 p-2.5 rounded-lg border border-slate-800">
+                            <span class="text-slate-300 font-medium">Jamboree Admin / Main</span>
+                            <span class="bg-emerald-950 text-emerald-300 border border-emerald-700/50 px-2 py-0.5 rounded font-mono font-bold">Ch 16</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-slate-900/80 p-2.5 rounded-lg border border-slate-800">
+                            <span class="text-slate-300 font-medium">Trail Convoy Lead</span>
+                            <span class="bg-trail-gold/20 text-trail-gold border border-trail-gold/40 px-2 py-0.5 rounded font-mono font-bold">Ch 22</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-slate-900/80 p-2.5 rounded-lg border border-slate-800">
+                            <span class="text-slate-300 font-medium">Emergency / Recovery</span>
+                            <span class="bg-rose-950 text-rose-300 border border-rose-700/50 px-2 py-0.5 rounded font-mono font-bold">Ch 10</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Important Jamboree Reminders -->
+                <div class="bg-slate-900/90 border border-trail-border rounded-2xl p-5">
+                    <h3 class="font-display font-bold text-white text-sm uppercase tracking-wider mb-3 text-trail-gold flex items-center gap-2">
+                        <i class="fa-solid fa-shield-halved"></i> Essential Rules & Gear
+                    </h3>
+                    <ul class="text-xs text-slate-300 space-y-2.5">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                            <span><strong>Trip Briefings:</strong> Mandatory attendance 15 mins prior to trip departures.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                            <span><strong>Safety Inspection:</strong> Rated recovery points front & rear required.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                            <span><strong>GDL Marquee:</strong> Venue for Official Welcome, Debriefs, and Bands.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+                            <span><strong>Sunday Hawaiian Theme:</strong> Wear your tropical shirts for dinner & raffles!</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Key Contacts Box -->
+                <div class="bg-gradient-to-br from-trail-oliveDark/40 to-slate-900 border border-trail-olive/40 rounded-2xl p-5">
+                    <h3 class="font-display font-bold text-white text-sm mb-2">Need Assistance?</h3>
+                    <p class="text-xs text-slate-300 mb-3">Visit the Event Registration Desk at the main marquee or contact event HQ.</p>
+                    <a href="tel:0400000000" class="inline-flex items-center justify-center gap-2 w-full py-2 bg-trail-olive hover:bg-trail-oliveLight text-white rounded-xl text-xs font-semibold transition-colors">
+                        <i class="fa-solid fa-headset"></i> Contact Event HQ
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Modal: Event Detail Drawer -->
+    <div id="event-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-trail-card border border-trail-border rounded-2xl max-w-lg w-full p-6 shadow-2xl relative animate-fade-in text-slate-100">
+            <button id="close-modal" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center border border-slate-700">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modal-content">
+                <!-- Modal content loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Map Guide -->
+    <div id="map-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-trail-card border border-trail-border rounded-2xl max-w-2xl w-full p-6 shadow-2xl relative text-slate-100">
+            <button id="close-map-modal" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center border border-slate-700">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <h2 class="text-xl font-bold font-display text-white mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-map-location-dot text-emerald-400"></i> Kendall Showground Layout
+            </h2>
+            <p class="text-xs text-slate-400 mb-4">Kendall Showground, NSW – Key Event Locations & Layout Scheme</p>
+
+            <!-- SVG Layout Map Graphic -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 flex flex-col items-center justify-center text-center">
+                <svg viewBox="0 0 600 350" class="w-full h-auto rounded-lg">
+                    <!-- Background Field -->
+                    <rect x="0" y="0" width="600" height="350" fill="#15181C" rx="10"/>
+                    <rect x="15" y="15" width="570" height="320" fill="#1C2127" stroke="#333A42" stroke-dasharray="4 4" rx="8"/>
+                    
+                    <!-- Main Field Ring -->
+                    <circle cx="280" cy="180" r="110" fill="#242E27" stroke="#4A5D4E" stroke-width="2"/>
+                    <text x="280" y="175" fill="#A7F3D0" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle">Main Arena</text>
+                    <text x="280" y="193" fill="#6EE7B7" font-family="sans-serif" font-size="10" text-anchor="middle">(Gymkhana & Show n Shine)</text>
+
+                    <!-- GDL Marquee -->
+                    <rect x="40" y="40" width="160" height="90" rx="8" fill="#3B2A1A" stroke="#E5A93C" stroke-width="2"/>
+                    <text x="120" y="80" fill="#FDE68A" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle">GDL Marquee</text>
+                    <text x="120" y="100" fill="#CBD5E1" font-family="sans-serif" font-size="10" text-anchor="middle">Welcome, Dinners & Bands</text>
+
+                    <!-- Flex Ramp Zone -->
+                    <rect x="420" y="40" width="140" height="80" rx="8" fill="#312E81" stroke="#818CF8" stroke-width="2"/>
+                    <text x="490" y="75" fill="#E0E7FF" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle">Flex Ramp Area</text>
+                    <text x="490" y="93" fill="#A5B4FC" font-family="sans-serif" font-size="10" text-anchor="middle">Ramp Up Your Mate</text>
+
+                    <!-- Trade / Market Stalls -->
+                    <rect x="40" y="220" width="160" height="80" rx="8" fill="#1E293B" stroke="#64748B" stroke-width="2"/>
+                    <text x="120" y="255" fill="#F1F5F9" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle">Markets & Swap Meet</text>
+                    <text x="120" y="273" fill="#94A3B8" font-family="sans-serif" font-size="10" text-anchor="middle">Silent Auction & Stalls</text>
+
+                    <!-- Main Gate & Camp Rego -->
+                    <rect x="420" y="220" width="140" height="80" rx="8" fill="#064E3B" stroke="#10B981" stroke-width="2"/>
+                    <text x="490" y="255" fill="#A7F3D0" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle">Camp Rego Gate</text>
+                    <text x="490" y="273" fill="#6EE7B7" font-family="sans-serif" font-size="10" text-anchor="middle">Trip Staging Area</text>
+                </svg>
+            </div>
+
+            <div class="mt-4 text-xs text-slate-300 flex items-center justify-between">
+                <span><i class="fa-solid fa-square text-amber-500 mr-1"></i> GDL Marquee</span>
+                <span><i class="fa-solid fa-square text-emerald-500 mr-1"></i> Registration & Staging</span>
+                <span><i class="fa-solid fa-square text-indigo-400 mr-1"></i> Flex Ramp</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: UHF Radio Guide -->
+    <div id="uhf-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-trail-card border border-trail-border rounded-2xl max-w-md w-full p-6 shadow-2xl relative text-slate-100">
+            <button id="close-uhf-modal" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center border border-slate-700">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <h2 class="text-xl font-bold font-display text-white mb-1 flex items-center gap-2">
+                <i class="fa-solid fa-walkie-talkie text-trail-gold"></i> UHF Radio Quick Guide
+            </h2>
+            <p class="text-xs text-slate-400 mb-4">Official communications etiquette and frequencies</p>
+
+            <div class="space-y-3 text-xs">
+                <div class="bg-slate-900 p-3 rounded-xl border border-slate-800">
+                    <div class="font-bold text-white text-sm mb-1">Channel Allocations</div>
+                    <ul class="space-y-1.5 text-slate-300">
+                        <li class="flex justify-between"><span>Main Event HQ / Ops:</span> <strong class="text-emerald-400">Ch 16</strong></li>
+                        <li class="flex justify-between"><span>Trail Trip Convoy Lead:</span> <strong class="text-trail-gold">Ch 22</strong></li>
+                        <li class="flex justify-between"><span>Emergency & Recovery:</span> <strong class="text-rose-400">Ch 10</strong></li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-900 p-3 rounded-xl border border-slate-800">
+                    <div class="font-bold text-white text-sm mb-1">Trail Comms Protocol</div>
+                    <ul class="list-disc list-inside space-y-1 text-slate-300">
+                        <li>Keep chatter clear during convoy movements.</li>
+                        <li>Report obstacles to the tail-end vehicle (Tail End Charlie).</li>
+                        <li>Acknowledge warnings from trip leaders promptly.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-trail-border py-8 text-center text-xs text-slate-500 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 space-y-2">
+            <p class="text-slate-400 font-medium">Australian 2026 Jeep Jamboree • Kendall Showground, NSW</p>
+            <p>Friday 2nd October – Monday 5th October 2026</p>
+            <p class="text-[11px] text-slate-600 pt-2">Created for Jeep Jamboree Enthusiasts • Interactive Off-Road Event Guide</p>
+        </div>
+    </footer>
+
+    <script>
+        // Schedule Dataset matching official provided itinerary
+        const scheduleData = [
+            // DAY 1
+            {
+                id: "d1-e1",
+                day: 1,
+                dayName: "Day 1 – Friday 2 October",
+                dateStr: "Friday 2 October 2026",
+                time: "8:00 am",
+                title: "Camp opens – Registrations",
+                location: "Main Entrance Gate / Rego Desk",
+                category: "Camp Ops",
+                badgeClass: "bg-sky-950 text-sky-300 border-sky-700/50",
+                icon: "fa-campground",
+                description: "Gates open for all attendees! Arrive early to collect your event pack, vehicle decals, UHF radio guide, and trail meal tokens.",
+                highlights: ["Registration Pack Pickup", "Vehicle Tech & Safety Check", "Campsite Setup"]
+            },
+            {
+                id: "d1-e2",
+                day: 1,
+                dayName: "Day 1 – Friday 2 October",
+                dateStr: "Friday 2 October 2026",
+                time: "12:00 pm – 4:00 pm",
+                title: "Half day trips depart",
+                location: "Trail Staging Area",
+                category: "4WD Trips",
+                badgeClass: "bg-emerald-950 text-emerald-300 border-emerald-700/50",
+                icon: "fa-truck-monster",
+                description: "First round of scenic and scenic-rugged half-day trail departures. Ensure your tire pressures are adjusted and UHF radio set to your lead's channel.",
+                highlights: ["Scenic Forest Tracks", "Driver Briefing 11:45 am", "UHF Channel Check"]
+            },
+            {
+                id: "d1-e3",
+                day: 1,
+                dayName: "Day 1 – Friday 2 October",
+                dateStr: "Friday 2 October 2026",
+                time: "5:00 pm",
+                title: "Official welcome, Jambo’s Got Talent & Prizes",
+                location: "GDL Marquee",
+                category: "Social & Entertainment",
+                badgeClass: "bg-purple-950 text-purple-300 border-purple-700/50",
+                icon: "fa-bullhorn",
+                description: "Official Event Opening Welcome at the GDL Marquee! Followed by Jambo’s Got Talent competition (open to all attendees), Lucky Door Prizes, and Jambo Comp winners announcement.",
+                highlights: ["Official Welcome Address", "Jambo’s Got Talent (Open to all)", "Lucky Door Prizes & Comp Winners"]
+            },
+
+            // DAY 2
+            {
+                id: "d2-e1",
+                day: 2,
+                dayName: "Day 2 – Saturday 3 October",
+                dateStr: "Saturday 3 October 2026",
+                time: "8:00 am – 4:00 pm",
+                title: "Full day trips depart",
+                location: "Trail Staging Area",
+                category: "4WD Trips",
+                badgeClass: "bg-emerald-950 text-emerald-300 border-emerald-700/50",
+                icon: "fa-route",
+                description: "Epic full-day 4WD trail adventures into the hinterland tracks! Pack lunch, recovery gear, and plenty of water for a day on the trails.",
+                highlights: ["Full Day Off-Road Trails", "Varied Difficulty Ratings", "Scenic Lunch Stops"]
+            },
+            {
+                id: "d2-e2",
+                day: 2,
+                dayName: "Day 2 – Saturday 3 October",
+                dateStr: "Saturday 3 October 2026",
+                time: "2:00 pm – 5:00 pm",
+                title: "Gymkhana",
+                location: "Main Arena",
+                category: "Competitions & Displays",
+                badgeClass: "bg-amber-950 text-amber-300 border-amber-700/50",
+                icon: "fa-trophy",
+                description: "Test your vehicle control, precision driving, and obstacle navigation skills in the legendary Jeep Gymkhana!",
+                highlights: ["Driver Precision Challenges", "Spectator Grandstand", "Trophies for Top Drivers"]
+            },
+            {
+                id: "d2-e3",
+                day: 2,
+                dayName: "Day 2 – Saturday 3 October",
+                dateStr: "Saturday 3 October 2026",
+                time: "5:30 pm – 10:00 pm",
+                title: "Debrief & Live Music: The Big Fins",
+                location: "GDL Marquee",
+                category: "Social & Entertainment",
+                badgeClass: "bg-purple-950 text-purple-300 border-purple-700/50",
+                icon: "fa-guitar",
+                description: "Daily trail debrief followed by high-energy live entertainment featuring popular band 'The Big Fins'! Food trucks and bar open.",
+                highlights: ["Daily Trail Recap", "Live Band: The Big Fins", "Food Trucks & Evening Social"]
+            },
+
+            // DAY 3
+            {
+                id: "d3-e1",
+                day: 3,
+                dayName: "Day 3 – Sunday 4 October",
+                dateStr: "Sunday 4 October 2026",
+                time: "8:00 am – 12:00 pm",
+                title: "Show n Shine, Market Stalls, Swap Meet & Silent Auction",
+                location: "Showground Main Oval",
+                category: "Competitions & Displays",
+                badgeClass: "bg-amber-950 text-amber-300 border-amber-700/50",
+                icon: "fa-car-side",
+                description: "Marvel at pristine classics, heavily modified trail rigs, custom builds, market stalls, hard-to-find Jeep parts swap meet, and the Silent Auction.",
+                highlights: ["Jeep Show n Shine Contest", "4WD Gear & Market Stalls", "Part Swap Meet & Silent Auction"]
+            },
+            {
+                id: "d3-e2",
+                day: 3,
+                dayName: "Day 3 – Sunday 4 October",
+                dateStr: "Sunday 4 October 2026",
+                time: "11:00 am – 3:00 pm",
+                title: "Half day trips depart & Ramp Up Your Mate (Flex Ramp)",
+                location: "Trail Staging & Flex Arena",
+                category: "4WD Trips",
+                badgeClass: "bg-emerald-950 text-emerald-300 border-emerald-700/50",
+                icon: "fa-chart-line",
+                description: "Option for afternoon half-day trail runs OR test your suspension travel at the 'Ramp Up Your Mate' Flex Ramp competition!",
+                highlights: ["Afternoon Half-Day Trails", "Flex Ramp Suspension Competition", "RTI Score Challenge"]
+            },
+            {
+                id: "d3-e3",
+                day: 3,
+                dayName: "Day 3 – Sunday 4 October",
+                dateStr: "Sunday 4 October 2026",
+                time: "5:30 pm – 10:00 pm",
+                title: "Hawaiian Theme Night, Buffet Dinner, Darren Jack & Raffles",
+                location: "GDL Marquee",
+                category: "Social & Entertainment",
+                badgeClass: "bg-rose-950 text-rose-300 border-rose-700/50",
+                icon: "fa-shirt",
+                description: "Don your brightest Hawaiian floral shirts! Includes trail debrief, delicious buffet style dinner, live solo performance by Darren Jack, and huge Raffle Prize draws.",
+                highlights: ["Hawaiian Theme Costume Night", "Buffet Dinner Included", "Live Performance by Darren Jack", "Major Raffle Draws"]
+            },
+
+            // DAY 4
+            {
+                id: "d4-e1",
+                day: 4,
+                dayName: "Day 4 – Monday 5 October",
+                dateStr: "Monday 5 October 2026",
+                time: "9:00 am",
+                title: "Half Day trips depart",
+                location: "Trail Staging Area",
+                category: "4WD Trips",
+                badgeClass: "bg-emerald-950 text-emerald-300 border-emerald-700/50",
+                icon: "fa-compass",
+                description: "Final morning half-day trail run for those looking to hit the tracks one last time before wrapping up.",
+                highlights: ["Final Trail Runs", "Morning Scenic Views", "Wrap-up Photo Ops"]
+            },
+            {
+                id: "d4-e2",
+                day: 4,
+                dayName: "Day 4 – Monday 5 October",
+                dateStr: "Monday 5 October 2026",
+                time: "1:00 pm",
+                title: "CAMP CLOSES",
+                location: "Kendall Showground",
+                category: "Camp Ops",
+                badgeClass: "bg-sky-950 text-sky-300 border-sky-700/50",
+                icon: "fa-flag-checkered",
+                description: "Camp official closure. Safe travels home to all Jeep Jamboree crews and see you at the next Jambo!",
+                highlights: ["Campsite Checkout", "Farewell Crew & Travel Safe"]
+            }
+        ];
+
+        // State Management
+        let currentDayFilter = "all";
+        let currentCategoryFilter = "all";
+        let searchQuery = "";
+        let savedEventIds = JSON.parse(localStorage.getItem("jamboree_saved_events") || "[]");
+
+        // Countdown Timer Logic
+        function initCountdown() {
+            // Target: Oct 2, 2026 08:00 AEST
+            const targetDate = new Date("2026-10-02T08:00:00+10:00").getTime();
+
+            function updateTimer() {
+                const now = new Date().getTime();
+                const diff = targetDate - now;
+
+                if (diff <= 0) {
+                    document.getElementById("cd-days").innerText = "00";
+                    document.getElementById("cd-hours").innerText = "00";
+                    document.getElementById("cd-mins").innerText = "00";
+                    document.getElementById("cd-secs").innerText = "00";
+                    return;
+                }
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById("cd-days").innerText = String(days).padStart(2, '0');
+                document.getElementById("cd-hours").innerText = String(hours).padStart(2, '0');
+                document.getElementById("cd-mins").innerText = String(mins).padStart(2, '0');
+                document.getElementById("cd-secs").innerText = String(secs).padStart(2, '0');
+            }
+
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        }
+
+        // Render Schedule Engine
+        function renderSchedule() {
+            const container = document.getElementById("events-container");
+            container.innerHTML = "";
+
+            // Filter logic
+            let filtered = scheduleData.filter(evt => {
+                // Day Filter
+                if (currentDayFilter === "saved") {
+                    if (!savedEventIds.includes(evt.id)) return false;
+                } else if (currentDayFilter !== "all" && evt.day !== parseInt(currentDayFilter)) {
+                    return false;
+                }
+
+                // Category Filter
+                if (currentCategoryFilter !== "all" && evt.category !== currentCategoryFilter) {
+                    return false;
+                }
+
+                // Search Query
+                if (searchQuery.trim() !== "") {
+                    const q = searchQuery.toLowerCase();
+                    const inTitle = evt.title.toLowerCase().includes(q);
+                    const inDesc = evt.description.toLowerCase().includes(q);
+                    const inLoc = evt.location.toLowerCase().includes(q);
+                    const inCat = evt.category.toLowerCase().includes(q);
+                    if (!inTitle && !inDesc && !inLoc && !inCat) return false;
+                }
+
+                return true;
+            });
+
+            // Update saved count badge
+            document.getElementById("saved-count").innerText = savedEventIds.length;
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="bg-trail-card border border-trail-border rounded-2xl p-12 text-center my-6">
+                        <div class="w-16 h-16 bg-slate-900 text-trail-gold rounded-full flex items-center justify-center mx-auto text-2xl mb-4 border border-slate-700">
+                            <i class="fa-solid fa-compass-slash"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-1">No Schedule Events Found</h3>
+                        <p class="text-sm text-slate-400 max-w-md mx-auto">Try clearing search filters or changing the active day selection.</p>
+                        <button onclick="resetFilters()" class="mt-4 px-4 py-2 bg-trail-gold text-slate-950 text-xs font-bold rounded-xl hover:bg-trail-goldHover transition-colors">
+                            Reset Filters
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+
+            // Group events by day if viewing "all" or "saved"
+            const groupByDay = (currentDayFilter === "all" || currentDayFilter === "saved");
+
+            let currentGroupDay = null;
+
+            filtered.forEach(evt => {
+                if (groupByDay && currentGroupDay !== evt.day) {
+                    currentGroupDay = evt.day;
+                    const groupHeader = document.createElement("div");
+                    groupHeader.className = "flex items-center gap-3 pt-4 pb-2 border-b border-trail-border";
+                    groupHeader.innerHTML = `
+                        <div class="w-3 h-3 rounded-full bg-trail-gold"></div>
+                        <h2 class="text-xl font-extrabold font-display text-white tracking-wide uppercase">${evt.dayName}</h2>
+                    `;
+                    container.appendChild(groupHeader);
+                }
+
+                const isSaved = savedEventIds.includes(evt.id);
+
+                const card = document.createElement("div");
+                card.className = `event-card bg-trail-card border border-trail-border hover:border-slate-600 rounded-2xl p-5 shadow-lg transition-all hover:shadow-xl relative ${
+                    evt.category === 'Social & Entertainment' ? 'gradient-border-purple' : evt.category === '4WD Trips' ? 'gradient-border-olive' : 'gradient-border-gold'
+                }`;
+
+                card.innerHTML = `
+                    <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                        
+                        <div class="flex items-start gap-4">
+                            <!-- Icon Box -->
+                            <div class="w-12 h-12 rounded-xl bg-slate-900 border border-slate-700/80 text-trail-gold flex items-center justify-center text-xl shrink-0 mt-0.5">
+                                <i class="fa-solid ${evt.icon}"></i>
+                            </div>
+
+                            <!-- Content -->
+                            <div class="space-y-1.5">
+                                <div class="flex items-center gap-2 flex-wrap">
+                                    <!-- Time Badge -->
+                                    <span class="inline-flex items-center gap-1 bg-slate-900 text-trail-gold border border-trail-gold/30 px-2.5 py-0.5 rounded-lg text-xs font-bold font-mono">
+                                        <i class="fa-regular fa-clock text-[10px]"></i> ${evt.time}
+                                    </span>
+                                    
+                                    <!-- Category Tag -->
+                                    <span class="border ${evt.badgeClass} px-2.5 py-0.5 rounded-lg text-[11px] font-semibold">
+                                        ${evt.category}
+                                    </span>
+                                </div>
+
+                                <h3 class="text-lg font-bold text-white group-hover:text-trail-gold transition-colors">
+                                    ${evt.title}
+                                </h3>
+
+                                <div class="text-xs text-slate-400 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-location-dot text-red-400"></i> ${evt.location}
+                                </div>
+
+                                <p class="text-xs text-slate-300 pt-1 leading-relaxed">
+                                    ${evt.description}
+                                </p>
+
+                                <!-- Highlight Tags -->
+                                <div class="flex flex-wrap gap-1.5 pt-2">
+                                    ${evt.highlights.map(h => `<span class="bg-slate-900/90 text-slate-400 text-[10px] px-2 py-0.5 rounded border border-slate-800"><i class="fa-solid fa-angle-right text-trail-gold mr-1 text-[8px]"></i>${h}</span>`).join('')}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card Action Buttons -->
+                        <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-start gap-2 pt-3 sm:pt-0 border-t sm:border-t-0 border-slate-800 shrink-0">
+                            <!-- Bookmark Heart -->
+                            <button onclick="toggleSaveEvent('${evt.id}')" class="p-2 rounded-xl bg-slate-900 border border-slate-700 hover:border-rose-500/50 text-slate-400 hover:text-rose-400 transition-colors ${isSaved ? 'text-rose-500 bg-rose-950/40 border-rose-800' : ''}" title="${isSaved ? 'Remove from Saved' : 'Save to Itinerary'}">
+                                <i class="${isSaved ? 'fa-solid' : 'fa-regular'} fa-heart text-base"></i>
+                            </button>
+
+                            <!-- Add to Calendar Button -->
+                            <button onclick="downloadICS('${evt.id}')" class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-700 hover:border-trail-gold text-slate-300 hover:text-trail-gold text-xs font-semibold transition-colors flex items-center gap-1.5" title="Add to iCal / Outlook / Google Calendar">
+                                <i class="fa-regular fa-calendar-plus"></i>
+                                <span class="text-[11px]">Cal</span>
+                            </button>
+
+                            <!-- More Details Modal Trigger -->
+                            <button onclick="openModal('${evt.id}')" class="px-3 py-1.5 rounded-xl bg-trail-olive hover:bg-trail-oliveLight text-white text-xs font-semibold transition-colors flex items-center gap-1">
+                                <span>Details</span>
+                                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                `;
+
+                container.appendChild(card);
+            });
+        }
+
+        // Toggle Bookmark / LocalStorage
+        function toggleSaveEvent(id) {
+            if (savedEventIds.includes(id)) {
+                savedEventIds = savedEventIds.filter(i => i !== id);
+            } else {
+                savedEventIds.push(id);
+            }
+            localStorage.setItem("jamboree_saved_events", JSON.stringify(savedEventIds));
+            renderSchedule();
+        }
+
+        // Reset Filters
+        function resetFilters() {
+            currentDayFilter = "all";
+            currentCategoryFilter = "all";
+            searchQuery = "";
+            document.getElementById("search-input").value = "";
+            document.getElementById("clear-search").classList.add("hidden");
+            
+            // Update UI buttons
+            document.querySelectorAll(".day-tab").forEach(btn => {
+                btn.classList.remove("bg-trail-gold", "text-slate-950");
+                btn.classList.add("bg-trail-card", "text-slate-300");
+            });
+            document.querySelector('.day-tab[data-day="all"]').classList.add("bg-trail-gold", "text-slate-950");
+
+            document.querySelectorAll(".cat-pill").forEach(btn => {
+                btn.classList.remove("bg-trail-gold", "text-slate-950");
+                btn.classList.add("bg-slate-900", "text-slate-300");
+            });
+            document.querySelector('.cat-pill[data-cat="all"]').classList.add("bg-trail-gold", "text-slate-950");
+
+            renderSchedule();
+        }
+
+        // Download iCalendar .ics file
+        function downloadICS(id) {
+            const evt = scheduleData.find(e => e.id === id);
+            if (!evt) return;
+
+            // Generate ICS Content
+            const startDateStr = "2026100" + evt.day + "T" + (evt.time.includes("8:00") ? "080000" : evt.time.includes("12:00") ? "120000" : evt.time.includes("5:00") ? "170000" : "090000");
+            const endDateStr = "2026100" + evt.day + "T" + (evt.time.includes("10:00") ? "220000" : "170000");
+
+            const icsContent = 
+`BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Australian Jeep Jamboree 2026//EN
+BEGIN:VEVENT
+SUMMARY:Jeep Jambo: ${evt.title}
+DESCRIPTION:${evt.description}
+LOCATION:${evt.location}, Kendall Showground, NSW
+DTSTART:${startDateStr}
+DTEND:${endDateStr}
+END:VEVENT
+END:VCALENDAR`;
+
+            const blob = new Blob([icsContent], { type: "text/calendar;charset=utf-8;" });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = `JeepJamboree_${evt.id}.ics`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Event Modal Handler
+        function openModal(id) {
+            const evt = scheduleData.find(e => e.id === id);
+            if (!evt) return;
+
+            const modalContent = document.getElementById("modal-content");
+            modalContent.innerHTML = `
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-trail-gold text-slate-950 font-bold px-2.5 py-0.5 rounded text-xs">
+                            ${evt.dayName}
+                        </span>
+                        <span class="text-xs text-slate-400 font-mono">${evt.time}</span>
+                    </div>
+
+                    <h2 class="text-2xl font-bold font-display text-white">${evt.title}</h2>
+
+                    <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl space-y-1.5 text-xs text-slate-300">
+                        <div><strong class="text-slate-100"><i class="fa-solid fa-location-dot text-red-400 mr-1.5"></i> Location:</strong> ${evt.location}</div>
+                        <div><strong class="text-slate-100"><i class="fa-solid fa-tags text-trail-gold mr-1.5"></i> Category:</strong> ${evt.category}</div>
+                    </div>
+
+                    <p class="text-xs text-slate-300 leading-relaxed">${evt.description}</p>
+
+                    <div>
+                        <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-2">Key Highlights & Activities</h4>
+                        <ul class="space-y-1.5 text-xs text-slate-300">
+                            ${evt.highlights.map(h => `<li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400 text-xs"></i> ${h}</li>`).join('')}
+                        </ul>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                        <button onclick="downloadICS('${evt.id}')" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-semibold rounded-xl transition-colors flex items-center gap-2">
+                            <i class="fa-regular fa-calendar-plus text-trail-gold"></i> Export to Calendar
+                        </button>
+                        <button onclick="toggleSaveEvent('${evt.id}'); closeModal();" class="px-4 py-2 bg-trail-gold hover:bg-trail-goldHover text-slate-950 text-xs font-bold rounded-xl transition-colors">
+                            ${savedEventIds.includes(evt.id) ? 'Saved in Itinerary' : 'Save to Itinerary'}
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById("event-modal").classList.remove("hidden");
+        }
+
+        function closeModal() {
+            document.getElementById("event-modal").classList.add("hidden");
+        }
+
+        // Initialize UI Event Listeners
+        window.onload = function() {
+            initCountdown();
+            renderSchedule();
+
+            // Day Tab Click Handlers
+            document.querySelectorAll(".day-tab").forEach(btn => {
+                btn.addEventListener("click", function() {
+                    document.querySelectorAll(".day-tab").forEach(b => {
+                        b.classList.remove("bg-trail-gold", "text-slate-950");
+                        b.classList.add("bg-trail-card", "text-slate-300");
+                    });
+                    this.classList.remove("bg-trail-card", "text-slate-300");
+                    this.classList.add("bg-trail-gold", "text-slate-950");
+
+                    currentDayFilter = this.getAttribute("data-day");
+                    renderSchedule();
+                });
+            });
+
+            // Category Filter Click Handlers
+            document.querySelectorAll(".cat-pill").forEach(btn => {
+                btn.addEventListener("click", function() {
+                    document.querySelectorAll(".cat-pill").forEach(b => {
+                        b.classList.remove("bg-trail-gold", "text-slate-950");
+                        b.classList.add("bg-slate-900", "text-slate-300");
+                    });
+                    this.classList.remove("bg-slate-900", "text-slate-300");
+                    this.classList.add("bg-trail-gold", "text-slate-950");
+
+                    currentCategoryFilter = this.getAttribute("data-cat");
+                    renderSchedule();
+                });
+            });
+
+            // Search input listener
+            const searchInput = document.getElementById("search-input");
+            const clearBtn = document.getElementById("clear-search");
+
+            searchInput.addEventListener("input", function(e) {
+                searchQuery = e.target.value;
+                if (searchQuery.length > 0) {
+                    clearBtn.classList.remove("hidden");
+                } else {
+                    clearBtn.classList.add("hidden");
+                }
+                renderSchedule();
+            });
+
+            clearBtn.addEventListener("click", function() {
+                searchInput.value = "";
+                searchQuery = "";
+                clearBtn.classList.add("hidden");
+                renderSchedule();
+            });
+
+            // Print button listener
+            document.getElementById("btn-print").addEventListener("click", function() {
+                window.print();
+            });
+
+            // Modals Close handlers
+            document.getElementById("close-modal").addEventListener("click", closeModal);
+            
+            document.getElementById("btn-show-map").addEventListener("click", function() {
+                document.getElementById("map-modal").classList.remove("hidden");
+            });
+
+            document.getElementById("close-map-modal").addEventListener("click", function() {
+                document.getElementById("map-modal").classList.add("hidden");
+            });
+
+            document.getElementById("btn-uhf-info").addEventListener("click", function() {
+                document.getElementById("uhf-modal").classList.remove("hidden");
+            });
+
+            document.getElementById("close-uhf-modal").addEventListener("click", function() {
+                document.getElementById("uhf-modal").classList.add("hidden");
+            });
+
+            // Close modal on click backdrop
+            window.addEventListener("click", function(e) {
+                const eventModal = document.getElementById("event-modal");
+                const mapModal = document.getElementById("map-modal");
+                const uhfModal = document.getElementById("uhf-modal");
+
+                if (e.target === eventModal) closeModal();
+                if (e.target === mapModal) mapModal.classList.add("hidden");
+                if (e.target === uhfModal) uhfModal.classList.add("hidden");
+            });
+        };
+    </script>
+</body>
+</html>
